@@ -32,11 +32,17 @@ const App = () => {
       >
         {play ? (
           <ARCanvas
-            renderer="logarithmicDepthBuffer: true;"
             className="AR"
-            camera={{ position: [0, 0, 0] }}
+            shadows
+            camera={{ position: [0, 0, 0], near: 0.01, far: 1000 }}
             onCreated={({ gl }) => {
               gl.setSize(window.innerWidth, window.innerHeight);
+            }}
+            gl={{
+              alpha: true,
+              antialias: true,
+              precision: "highp",
+              logarithmicDepthBuffer: true
             }}
           >
             <ARMarker
@@ -45,7 +51,6 @@ const App = () => {
               onMarkerFound={handleMarkerFound}
               onMarkerLost={handleMarkerLost}
             >
-              <OrbitControls />
               <ambientLight />
               <Suspense fallback={null}>
                 <Model
@@ -54,6 +59,7 @@ const App = () => {
                   scale={[2, 2, 2]}
                 />
               </Suspense>
+              <OrbitControls />
             </ARMarker>
           </ARCanvas>
         ) : (

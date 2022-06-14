@@ -8,11 +8,23 @@ import { useGLTF, useAnimations } from "@react-three/drei";
 export default function Model(props) {
   const group = useRef();
   const { nodes, materials, animations } = useGLTF("/WavingGlb2.glb");
-  const { actions } = useAnimations(animations, group);
+  const { mixer, actions } = useAnimations(animations, group);
   
-  useEffect(()=>{
-    actions.wave.play();
-  }, [])
+  mixer.addEventListener("finished", () => {
+    actions["happyIdle"]
+      .setLoop(THREE.LoopOnce)
+      .fadeIn(3)
+      .crossFadeTo(actions?.talking2, 3, true)
+      .play();
+  });
+
+  useEffect(() => {
+    if (props.marker) {
+      mixer.stopAllAction();
+      actions["waving"].fadeOut(5).setLoop(THREE.LoopOnce).play();
+    }
+  }, [props.marker]);
+  
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Scene">
