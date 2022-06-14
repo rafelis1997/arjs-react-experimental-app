@@ -57,6 +57,7 @@ const App = () => {
                   rotation={[-90, 0, 0]}
                   position={[0, 0, 0]}
                   scale={[2, 2, 2]}
+                  marker={marker}
                 />
               </Suspense>
               <OrbitControls />
