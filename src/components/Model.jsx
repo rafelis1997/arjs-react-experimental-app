@@ -25,7 +25,7 @@ export default function Model(props) {
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Scene">
-        <group name="Armature" position={[0.06, -1.7, 0]}>
+        <group name="Armature" position={[0, 0, 0]}>
           <primitive object={nodes.Hips} />
           <primitive object={nodes.Ctrl_ArmPole_IK_Left} />
           <primitive object={nodes.Ctrl_Hand_IK_Left} />
