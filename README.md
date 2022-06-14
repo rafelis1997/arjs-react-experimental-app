@@ -8,7 +8,7 @@
 
 These app was developed in order to test a way to use react features and AR.js features as well
 
-Here I'm was able to implement AR.js and create a SPA with splash screen.
+Here I was able to implement AR.js and create a SPA with splash screen.
 
 
 ## Stacks
@@ -22,7 +22,7 @@ Here I'm was able to implement AR.js and create a SPA with splash screen.
 - Splash screen to prevent camera permission on start.
 - SPA
 - Custom 3D model
-- Play .GLB embbended animations
+- Play .GLB embedded animations
 
 
 
