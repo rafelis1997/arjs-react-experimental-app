@@ -1,0 +1,120 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+}
+
+.App {
+  text-align: center;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  background: #ff6b6b;
+
+  z-index: 2;
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container h1 {
+  font-size: 3rem;
+  font-weight: 900;
+  color: white;
+  text-shadow: 2px 2px black;
+}
+
+.playScreen {
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  position: absolute;
+  margin: 0 0.5rem;
+}
+
+.playScreen button {
+  border: none;
+  height: 40px;
+  border-radius: 10px;
+  background: #1a535c;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.AR {
+  position: relative;
+  z-index: 1;
+}
+
+.footer {
+  bottom: 50px;
+  position: absolute;
+  color: white;
+}
+
+.footer span {
+  font-size: 1.275rem;
+  font-weight: 700;
+}
+
+.scanMarkerImg {
+  position: absolute;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+}
+
+.scanMarkerImg img {
+  width: 50%;
+}
+
+@media (max-width: 765px) {
+  .container h1 {
+    font-size: 2rem;
+    font-weight: 900;
+    color: white;
+    text-shadow: 2px 2px black;
+  }
+
+  .playScreen {
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+    position: absolute;
+  }
+
+  .playScreen button {
+    border: none;
+    height: 50px;
+    border-radius: 8px;
+    background: #1a535c;
+    color: white;
+    font-size: 1.175rem;
+    font-weight: 700;
+  }
+
+  .footer {
+    bottom: 50px;
+    position: absolute;
+    color: white;
+  }
+
+  .footer span {
+    font-size: 1.075rem;
+    font-weight: 700;
+  }
+
+  .scanMarkerImg img {
+    width: 50%;
+  }
+}
