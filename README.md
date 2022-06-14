@@ -28,10 +28,17 @@ Here I'm was able to implement AR.js and create a SPA with splash screen.
 
 ## Demonstration
 
-Try it on [AR.js React Test](https://arjs-react-test.vercel.app)
+Try it on [AR.js React Test](https://arjs-react-test.vercel.app), show this marker:
 
+<p align="center">
+ <img src="https://user-images.githubusercontent.com/60658855/173499194-73520eb9-3e30-4163-bb2c-a35eebf1b69e.png" width=300 />
+</p>
 
-![ezgif com-gif-maker](https://user-images.githubusercontent.com/60658855/173495185-871a4655-7776-46e8-b98a-428aec25f585.gif)
+This should be what you see:
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/60658855/173495185-871a4655-7776-46e8-b98a-428aec25f585.gif" />
+</p>
 
 ## Improvements
 
