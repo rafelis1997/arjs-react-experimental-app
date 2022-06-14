@@ -50,10 +50,5 @@ a bug in orientation retrieve from the source library.
 
 <p>
 <a href="www.fiverr.com/rafelis"><img src="https://img.shields.io/badge/Fiverr-gree"/></a>
-
+<a href="mailto:rafaelheros80@gmail.com"><img src="https://img.shields.io/badge/Gmail-red"/></a>
 </p>
-
-[![Fiverr](https://img.shields.io/badge/Fiverr-gree)](www.fiverr.com/rafelis)
-[![Email](https://img.shields.io/badge/Gmail-red)](mailto:rafaelheros80@gmail.com)
-**Email**: rafaelheros80@gmail.com
-
