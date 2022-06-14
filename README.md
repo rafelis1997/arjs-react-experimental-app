@@ -1,6 +1,11 @@
 
 # arjs-react-experimental-app
 
+<p align="center" >
+ <img src="https://ar-js-org.github.io/AR.js-Docs/logo.png" width=200/>
+ <img src="https://www.tshirtgeek.com.br/wp-content/uploads/2021/03/com015.jpg" width=112/>
+</p>
+
 These app was developed in order to test a way to use react features and AR.js features as well
 
 Here I'm was able to implement AR.js and create a SPA with splash screen.
@@ -26,6 +31,8 @@ Here I'm was able to implement AR.js and create a SPA with splash screen.
 Try it on [AR.js React Test](arjs-react-test.vercel.app)
 
 
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/60658855/173495185-871a4655-7776-46e8-b98a-428aec25f585.gif)
+
 ## Improvements
 
 - Today we are experiencing and error in the custom asset used in the demonstration, 
@@ -46,7 +53,7 @@ a bug in orientation retrieve from the source library.
  - [AR.js](https://ar-js-org.github.io/AR.js-Docs/)
 
 
-## Contatos
+## Contact
 
 <p>
 <a href="www.fiverr.com/rafelis"><img src="https://img.shields.io/badge/Fiverr-gree"/></a>
