@@ -56,7 +56,7 @@ const App = () => {
                 <Model
                   rotation={[-90, 0, 0]}
                   position={[0, 2, 0]}
-                  scale={[2, 2, 2]}
+                  scale={[1, 1, 1]}
                   marker={marker}
                 />
               </Suspense>
