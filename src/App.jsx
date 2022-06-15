@@ -14,13 +14,13 @@ const App = () => {
   }
 
   function handleMarkerFound() {
-    let setMarkerDetected = !marker;
+    let setMarkerDetected = true;
     console.log(setMarkerDetected);
     setMarker(setMarkerDetected);
   }
 
   function handleMarkerLost() {
-    let setMarkerDetected = !marker;
+    let setMarkerDetected = false;
     setMarker(setMarkerDetected);
   }
 
