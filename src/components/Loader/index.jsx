@@ -1,13 +1,13 @@
-import "./style.module.css";
+import "./style-loader.css";
 
-import { Html, useProgress } from "@react-three/drei";
+import { useProgress } from "@react-three/drei";
 
 export default function Loader() {
   const { progress } = useProgress();
   return (
     <div className="container">
       <div className="playScreen">
-        <h1>Start experience</h1>
+        <h1>Loading Experience</h1>
 
         <div className="lds-ripple">
           <div></div>

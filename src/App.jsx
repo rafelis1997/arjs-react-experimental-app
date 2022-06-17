@@ -3,6 +3,7 @@ import { OrbitControls } from "@react-three/drei";
 import { ARCanvas, ARMarker } from "@artcom/react-three-arjs";
 import "./styles.css";
 import Model from "./components/Model";
+import Loader from "./components/Loader";
 
 const App = () => {
   const [play, setPlay] = useState(false);
@@ -52,7 +53,7 @@ const App = () => {
               onMarkerLost={handleMarkerLost}
             >
               <ambientLight />
-              <Suspense fallback={null}>
+              <Suspense fallback={<Loader/>}>
                 <Model
                   rotation={[-90, 0, 0]}
                   position={[0, 2, 0]}
