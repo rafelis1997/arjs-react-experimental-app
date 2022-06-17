@@ -5,11 +5,11 @@ import { useProgress } from "@react-three/drei";
 export default function Loader() {
   const { progress } = useProgress();
   return (
-    <div className="container">
-      <div className="playScreen">
+    <div className="container-loader">
+      <div className="loadScreen">
         <h1>Loading Experience</h1>
 
-        <div className="lds-ripple">
+        <div>
           <div></div>
           <div>{progress} % loaded</div>
           <div></div>
