@@ -38,6 +38,7 @@ body {
   position: absolute;
   margin: 0 0.5rem;
   gap: 2rem;
+  text-align: center;
 }
 
 .playScreen button {

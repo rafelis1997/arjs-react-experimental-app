@@ -121,11 +121,12 @@ const App = () => {
             <h1>Start experience</h1>
 
             <button onClick={handlePlayButton}>Play!</button>
+            <p style={{color:"white", textAlign:"center"}}>If you encounter a wrong video positioning,<br/> 
+            turn your phone orientation or resize your browser window
+            </p>
           </div>
         )}  
         <p className="footer">
-          If you encounter a wrong video positioning, turn your phone
-          orientation or resize your browser window <br/>
           <br/>Developed by {""}
           <span>Rafael de Almeida</span>
         </p>
