@@ -38,8 +38,9 @@ const App = () => {
     loadScreen.style.transition = "opacity 0.4s ease-out"
     loadScreen.style.opacity = 0;
     setTimeout(()=>{
-      loadScreen.style.visibility = 'hidden';
+      loadScreen.remove();
     }, 600);
+
   }
 
   function handleVideoStreamError(){
