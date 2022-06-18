@@ -19,7 +19,7 @@ const App = () => {
 
   const bind = usePinch(({ offset: [scale, angle], da : [d,a] }) => { 
     setScale([scale,scale,scale]);
-    let angleThreshold = Math.abs((newAngle[1] - angle)/newAngle[1]);
+    let angleThreshold = Math.abs(((newAngle[1]/0.1) - angle)/(newAngle[1]/0.1));
     let distThreshold = Math.abs((dist - d)/d);
     console.log(angleThreshold);
     if(angleThreshold > 0.5 && distThreshold < 0.1) { 
