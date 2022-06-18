@@ -3,25 +3,28 @@ import { OrbitControls,Loader } from "@react-three/drei";
 import { ARCanvas, ARMarker } from "@artcom/react-three-arjs";
 import "./styles.css";
 import Model from "./components/Model";
+import LoaderScreen from "./components/LoaderScreen";
+import { useEffect } from "react";
 
 const App = () => {
   const [play, setPlay] = useState(false);
   const [marker, setMarker] = useState(false);
+  const [camera, setCamera] = useState(false);
+  let videoFeed;
 
   function handlePlayButton() {
     let setDisplay = !play;
     const playScreen = document.querySelector('.playScreen');
-    playScreen.style.transition = "opacity 0.3s ease-out"
+    playScreen.style.transition = "opacity 0.2s ease-out"
     playScreen.style.opacity = 0;
-    setTimeout(()=>{
       setPlay(setDisplay);
-    }, 100)
   }
 
   function handleMarkerFound() {
     let setMarkerDetected = true;
     console.log(setMarkerDetected);
     setMarker(setMarkerDetected);
+    return 
   }
 
   function handleMarkerLost() {
@@ -29,14 +32,30 @@ const App = () => {
     setMarker(setMarkerDetected);
   }
 
+
+  function handleVideoStreamReady() {
+    const loadScreen = document.querySelector('.container-loader');
+    loadScreen.style.transition = "opacity 0.4s ease-out"
+    loadScreen.style.opacity = 0;
+    setTimeout(()=>{
+      loadScreen.style.visibility = 'hidden';
+    }, 600);
+  }
+
+  function handleVideoStreamError(){
+   
+  }
+
   return (
     <>
       <div
         className="container"
-        style={play ? { background: "transparent",transition: "background 0.7s ease-in",transitionDelay: "0.9s" } : { background: "#ff6b6b" }}
+        style={play ? { background: "transparent",transition: "background 0.3s ease-in"} : { background: "#ff6b6b" }}
       >
+         
         {play ? (
-          <>          
+          <>
+          
           <ARCanvas
             className="AR"
             shadows
@@ -50,6 +69,9 @@ const App = () => {
               precision: "highp",
               logarithmicDepthBuffer: true
             }}
+            onCameraStreamReady={handleVideoStreamReady}
+            onCameraStreamError={handleVideoStreamError} //
+            sourceType = "webcam"
           >
             
             <ARMarker
@@ -84,6 +106,7 @@ const App = () => {
           <span>Rafael de Almeida</span>
         </p>
       </div>
+      <LoaderScreen/>  
       {!marker ? (
               <div className="scanMarkerImg">
                 <img src="./ScanMarkerInst.png" />
