@@ -22,10 +22,10 @@ const App = () => {
     let angleThreshold = Math.abs((newAngle[1] - angle)/newAngle[1]);
     let distThreshold = Math.abs((dist - d)/d);
     console.log(distThreshold);
-    if(angleThreshold > 0.3 && distThreshold < 0.2) { 
-      setNewAngle([-90,angle*0.2,0]);
+    if(angleThreshold > 0.3 && distThreshold < 0.1) { 
+      setNewAngle([-90,angle*0.1,0]);
     }
-    if(distThreshold >= 0.2) {
+    if(distThreshold >= 0.1) {
       setDist(d);
     }
   })
