@@ -11,7 +11,7 @@ const App = () => {
   function handlePlayButton() {
     let setDisplay = !play;
     const playScreen = document.querySelector('.playScreen');
-    playScreen.style.transition = "opacity 0.8s ease-out"
+    playScreen.style.transition = "opacity 0.3s ease-out"
     playScreen.style.opacity = 0;
     setTimeout(()=>{
       setPlay(setDisplay);
