@@ -15,7 +15,7 @@ const App = () => {
   function handlePlayButton() {
     let setDisplay = !play;
     const playScreen = document.querySelector('.playScreen');
-    playScreen.style.transition = "opacity 0.2s ease-out";
+    playScreen.style.transition = "opacity 0.4s ease-out";
     playScreen.style.opacity = 0;
       setPlay(setDisplay);
   }
@@ -50,7 +50,7 @@ const App = () => {
     <>
       <div
         className="container"
-        style={play ? { background: "transparent",transition: "background 0.3s ease-in"} : { background: "#ff6b6b" }}
+        style={play ? { background: "transparent",transition: "background 0.6s ease-in", transitionDelay:"0.7s"} : { background: "#ff6b6b" }}
       >
          
         {play ? (
