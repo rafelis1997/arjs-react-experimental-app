@@ -15,9 +15,11 @@ const App = () => {
   function handlePlayButton() {
     let setDisplay = !play;
     const playScreen = document.querySelector('.playScreen');
-    playScreen.style.transition = "opacity 0.4s ease-out";
+    playScreen.style.transition = "opacity 0.6s ease-out";
     playScreen.style.opacity = 0;
+    setTimeout(() => {
       setPlay(setDisplay);
+    },600)
   }
 
   function handleMarkerFound() {
