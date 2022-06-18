@@ -38,7 +38,7 @@ const App = () => {
     loadScreen.style.transition = "opacity 0.4s ease-out"
     loadScreen.style.opacity = 0;
     setTimeout(()=>{
-      loadScreen.remove();
+      loadScreen.style.display = 'none';
     }, 600);
 
   }
