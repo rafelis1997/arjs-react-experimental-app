@@ -124,7 +124,9 @@ const App = () => {
           </div>
         )}  
         <p className="footer">
-          Developed by {""}
+          If you encounter a wrong video positioning, turn your phone
+          orientation or resize your browser window <br/>
+          <br/>Developed by {""}
           <span>Rafael de Almeida</span>
         </p>
       </div>
