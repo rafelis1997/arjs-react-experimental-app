@@ -1,9 +1,8 @@
 import { Suspense, useState } from "react";
-import { OrbitControls } from "@react-three/drei";
+import { OrbitControls,Loader } from "@react-three/drei";
 import { ARCanvas, ARMarker } from "@artcom/react-three-arjs";
 import "./styles.css";
 import Model from "./components/Model";
-import Loader from "./components/Loader";
 
 const App = () => {
   const [play, setPlay] = useState(false);
@@ -11,7 +10,12 @@ const App = () => {
 
   function handlePlayButton() {
     let setDisplay = !play;
-    setPlay(setDisplay);
+    const playScreen = document.querySelector('.playScreen');
+    playScreen.style.transition = "opacity 0.8s ease-out"
+    playScreen.style.opacity = 0;
+    setTimeout(()=>{
+      setPlay(setDisplay);
+    }, 100)
   }
 
   function handleMarkerFound() {
@@ -29,9 +33,10 @@ const App = () => {
     <>
       <div
         className="container"
-        style={play ? { background: "transparent" } : { background: "#ff6b6b" }}
+        style={play ? { background: "transparent",transition: "background 0.5s ease-in",transitionDelay: "0.7s" } : { background: "#ff6b6b" }}
       >
         {play ? (
+          <>          
           <ARCanvas
             className="AR"
             shadows
@@ -46,6 +51,7 @@ const App = () => {
               logarithmicDepthBuffer: true
             }}
           >
+            
             <ARMarker
               type={"pattern"}
               patternUrl={"data/hiro.patt"}
@@ -53,7 +59,7 @@ const App = () => {
               onMarkerLost={handleMarkerLost}
             >
               <ambientLight />
-              <Suspense fallback={<Loader/>}>
+              <Suspense fallback={null}>
                 <Model
                   rotation={[-90, 0, 0]}
                   position={[0, 2, 0]}
@@ -64,26 +70,25 @@ const App = () => {
               <OrbitControls />
             </ARMarker>
           </ARCanvas>
+          
+          </>
         ) : (
           <div className="playScreen">
             <h1>Start experience</h1>
 
             <button onClick={handlePlayButton}>Play!</button>
           </div>
-        )}
-
+        )}  
         <p className="footer">
           Desenvolvido por {""}
           <span>Rafael de Almeida</span>
         </p>
       </div>
       {!marker ? (
-        <div className="scanMarkerImg">
-          <img src="./ScanMarkerInst.png" />
-        </div>
-      ) : (
-        <></>
-      )}
+              <div className="scanMarkerImg">
+                <img src="./ScanMarkerInst.png" />
+              </div>
+      ):(<></>)}
     </>
   );
 };
