@@ -46,8 +46,8 @@ This should be what you see:
 a flickering, cause still being investigated.~~
 - TypeScript still not well implemented sadly causing trouble in the implementation.
 - Build interactions with the 3D model through DOM buttons.
-- Investigate camera not being correctly positioned when started, probable cause is
-a bug in orientation retrieve from the source library.
+- ~~Investigate camera not being correctly positioned when started, probable cause is
+a bug in orientation retrieve from the source library.~~
 - ~~Chain multiple embendded animations.~~
  
 
