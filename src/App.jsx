@@ -52,7 +52,7 @@ const App = () => {
     <>
       <div
         className="container"
-        style={play ? { background: "transparent", transition: "background 0.6s ease-in", transitionDelay:"0.8s"} : { background: "#ff6b6b" }}
+        style={play ? { background: "transparent", transition: "background 0.8s ease-in", transitionDelay:"0.8s"} : { background: "#ff6b6b" }}
       >
          
         {play ? (
