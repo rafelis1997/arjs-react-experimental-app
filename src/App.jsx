@@ -24,7 +24,6 @@ const App = () => {
     let setMarkerDetected = true;
     console.log(setMarkerDetected);
     setMarker(setMarkerDetected);
-    return 
   }
 
   function handleMarkerLost() {
