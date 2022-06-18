@@ -24,6 +24,9 @@ const App = () => {
     if(angleThreshold > 0.3 && distThreshold < 0.2) { 
       setNewAngle([-90,angle*0.2,0]);
     }
+    if(distThreshold >= 0.2) {
+      setDist(d);
+    }
   })
 
   function handlePlayButton() {
