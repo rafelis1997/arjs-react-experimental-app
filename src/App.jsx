@@ -12,14 +12,16 @@ const App = () => {
   const [marker, setMarker] = useState(false);
   const [scale, setScale] = useState([1, 1, 1])
   const [newAngle, setNewAngle] = useState([-90,0,0]);
+  const [dist, setDist] = useState(0);
 
   document.addEventListener('gesturestart', (e) => e.preventDefault())
   document.addEventListener('gesturechange', (e) => e.preventDefault())
 
-  const bind = usePinch(({ offset: [scale, angle] }) => { 
+  const bind = usePinch(({ offset: [scale, angle], da : [d,a] }) => { 
     setScale([scale,scale,scale]);
     let angleThreshold = Math.abs((newAngle[1] - angle)/newAngle[1]);
-    if(angleThreshold > 0.3) { 
+    let distThreshold = Math.abs((dist - d)/d)
+    if(angleThreshold > 0.3 && distThreshold < 0.2) { 
       setNewAngle([-90,angle*0.2,0]);
     }
   })
