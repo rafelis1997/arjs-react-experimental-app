@@ -11,7 +11,7 @@ const App = () => {
   const [play, setPlay] = useState(false);
   const [marker, setMarker] = useState(false);
   const [scale, setScale] = useState([1, 1, 1])
-  cons [angle, setAngle] = useState(0);
+  const [angle, setAngle] = useState(0);
 
   document.addEventListener('gesturestart', (e) => e.preventDefault())
   document.addEventListener('gesturechange', (e) => e.preventDefault())
