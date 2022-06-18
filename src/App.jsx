@@ -19,7 +19,7 @@ const App = () => {
   const bind = usePinch(({ offset: [scale, angle] }) => { 
     setScale([scale,scale,scale]);
     let angleThreshold = Math.abs((newAngle[1] - angle)/newAngle[1]);
-    if(angleThreshold > 0.1) { 
+    if(angleThreshold > 0.3) { 
       setNewAngle([-90,angle*0.2,0]);
     }
   })
