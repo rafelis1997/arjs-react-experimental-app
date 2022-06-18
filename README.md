@@ -49,6 +49,7 @@ a flickering, cause still being investigated.~~
 - ~~Investigate camera not being correctly positioned when started, probable cause is
 a bug in orientation retrieve from the source library.~~
 - ~~Chain multiple embendded animations.~~
+- ~~BUild touch gestures controls.~~
  
 
 
