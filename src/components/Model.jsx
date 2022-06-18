@@ -1,11 +1,14 @@
-import React, { useEffect, useRef } from "react";
-import { useGLTF, useAnimations, Detailed } from "@react-three/drei";
+import React, { useEffect, useRef, useState } from "react";
+import { useGLTF, useAnimations } from "@react-three/drei";
+
 import * as THREE from "three";
 
 export default function Model(props) {
+
   const group = useRef();
   const { nodes, materials, animations } = useGLTF("/Animado.glb");
   const { mixer, actions } = useAnimations(animations, group);
+  
 
   mixer.addEventListener("finished", () => {
     actions["happyIdle"]

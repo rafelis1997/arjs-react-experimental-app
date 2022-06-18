@@ -1,16 +1,21 @@
 import { Suspense, useState } from "react";
-import { OrbitControls,Loader } from "@react-three/drei";
+import { OrbitControls } from "@react-three/drei";
 import { ARCanvas, ARMarker } from "@artcom/react-three-arjs";
+import { usePinch } from "@use-gesture/react";
+
 import "./styles.css";
 import Model from "./components/Model";
-import LoaderScreen from "./components/LoaderScreen";
-import { useEffect } from "react";
+
 
 const App = () => {
   const [play, setPlay] = useState(false);
   const [marker, setMarker] = useState(false);
-  const [camera, setCamera] = useState(false);
-  let videoFeed;
+  const [scale, setScale] = useState([1, 1, 1])
+
+  document.addEventListener('gesturestart', (e) => e.preventDefault())
+  document.addEventListener('gesturechange', (e) => e.preventDefault())
+
+  const bind = usePinch(({ offset: [scale, angle] }) => { setScale([scale,scale,scale])})
 
   function handlePlayButton() {
     let setDisplay = !play;
@@ -74,6 +79,7 @@ const App = () => {
             // onCameraStreamReady={handleVideoStreamReady}
             // onCameraStreamError={handleVideoStreamError} //
             sourceType = "webcam"
+            {...bind()}
           >
             
             <ARMarker
@@ -87,7 +93,7 @@ const App = () => {
                 <Model
                   rotation={[-90, 0, 0]}
                   position={[0, 2, 0]}
-                  scale={[1, 1, 1]}
+                  scale={scale}
                   marker={marker}
                 />
               </Suspense>
@@ -104,7 +110,7 @@ const App = () => {
           </div>
         )}  
         <p className="footer">
-          Desenvolvido por {""}
+          Developed by {""}
           <span>Rafael de Almeida</span>
         </p>
       </div>
