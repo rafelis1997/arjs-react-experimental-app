@@ -106,7 +106,7 @@ const App = () => {
           <span>Rafael de Almeida</span>
         </p>
       </div>
-      <LoaderScreen/>  
+      {/* <LoaderScreen/>   */}
       {!marker ? (
               <div className="scanMarkerImg">
                 <img src="./ScanMarkerInst.png" />
