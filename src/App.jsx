@@ -15,7 +15,7 @@ const App = () => {
   function handlePlayButton() {
     let setDisplay = !play;
     const playScreen = document.querySelector('.playScreen');
-    playScreen.style.transition = "opacity 0.2s ease-out"
+    playScreen.style.transition = "opacity 0.2s ease-out";
     playScreen.style.opacity = 0;
       setPlay(setDisplay);
   }
@@ -34,7 +34,7 @@ const App = () => {
 
   function handleVideoStreamReady() {
     const loadScreen = document.querySelector('.container-loader');
-    loadScreen.style.transition = "opacity 0.4s ease-out"
+    loadScreen.style.transition = "opacity 0.4s ease-out";
     loadScreen.style.opacity = 0;
     setTimeout(()=>{
       loadScreen.style.display = 'none';
@@ -69,8 +69,8 @@ const App = () => {
               precision: "highp",
               logarithmicDepthBuffer: true
             }}
-            onCameraStreamReady={handleVideoStreamReady}
-            onCameraStreamError={handleVideoStreamError} //
+            // onCameraStreamReady={handleVideoStreamReady}
+            // onCameraStreamError={handleVideoStreamError} //
             sourceType = "webcam"
           >
             
