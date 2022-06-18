@@ -11,12 +11,18 @@ const App = () => {
   const [play, setPlay] = useState(false);
   const [marker, setMarker] = useState(false);
   const [scale, setScale] = useState([1, 1, 1])
-  const [angle, setAngle] = useState([-90,0,0]);
+  const [newAngle, setNewAngle] = useState([-90,0,0]);
 
   document.addEventListener('gesturestart', (e) => e.preventDefault())
   document.addEventListener('gesturechange', (e) => e.preventDefault())
 
-  const bind = usePinch(({ offset: [scale, angle] }) => { setScale([scale,scale,scale]); setAngle([-90,angle,0])})
+  const bind = usePinch(({ offset: [scale, angle] }) => { 
+    setScale([scale,scale,scale]);
+    let angleThreshold = Math.abs((newAngle - angle)/newAngle);
+    if(angleThreshold > 0.1) { 
+      setNewAngle([-90,angle*0.2,0]);
+    }
+  })
 
   function handlePlayButton() {
     let setDisplay = !play;
@@ -92,7 +98,7 @@ const App = () => {
               <ambientLight />
               <Suspense fallback={null}>
                 <Model
-                  rotation={angle}
+                  rotation={newAngle}
                   position={[0, 2, 0]}
                   scale={scale}
                   marker={marker}
