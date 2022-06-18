@@ -106,7 +106,7 @@ const App = () => {
               <Suspense fallback={null}>
                 <Model
                   rotation={newAngle}
-                  position={[0, 2, 0]}
+                  position={[0, 2, -2]}
                   scale={scale}
                   marker={marker}
                 />
