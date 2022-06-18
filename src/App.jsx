@@ -33,7 +33,7 @@ const App = () => {
     <>
       <div
         className="container"
-        style={play ? { background: "transparent",transition: "background 0.7s ease-in",transitionDelay: "0.7s" } : { background: "#ff6b6b" }}
+        style={play ? { background: "transparent",transition: "background 0.7s ease-in",transitionDelay: "0.9s" } : { background: "#ff6b6b" }}
       >
         {play ? (
           <>          
