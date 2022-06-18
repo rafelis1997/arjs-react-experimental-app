@@ -100,6 +100,7 @@ const App = () => {
               patternUrl={"data/hiro.patt"}
               onMarkerFound={handleMarkerFound}
               onMarkerLost={handleMarkerLost}
+              params={{smooth: true}}
             >
               <ambientLight />
               <Suspense fallback={null}>
