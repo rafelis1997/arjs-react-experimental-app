@@ -13,7 +13,7 @@ Here I was able to implement AR.js and create a SPA with splash screen.
 
 ## Stacks
 
-**Front-end:** React
+**Front-end:** React, React-Three-Fiber, Three.js, AR.js
 
 
 ## Functionalities
